@@ -7,9 +7,24 @@ branches:
   only:
     - master
 
+addons:
+  apt:
+    sources:
+      - google-chrome
+    packages:
+      - google-chrome-stable
+
+
 cache:
   directories:
     - node_modules
+
+install:
+  - npm install
+
+script:
+  - npm run test -- --watch=false --no-progress --browsers=ChromeHeadlessNoSandbox
+
 
 deploy:
   provider: heroku

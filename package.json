@@ -5,6 +5,7 @@
     "ng": "ng",
     "start": "node start.js",
     "build": "ng build --prod",
+    "local-build": "ng build --prod && node start.js",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "postinstall": "ng build"

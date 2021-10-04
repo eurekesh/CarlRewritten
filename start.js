@@ -1,22 +1,19 @@
-
+function requireHTTPS(req, res, next) {
+  // The 'x-forwarded-proto' check is for Heroku
+  if (!req.secure && req.get('x-forwarded-proto') !== 'https') {
+    return res.redirect('https://' + req.get('host') + req.url);
+  }
+  next();
+}
 const express = require('express');
 const app = express();
-const path = require('path');
-const forceSSL = function() {
-  return function (req, res, next) {
-    if (req.headers['x-forwarded-proto'] !== 'https') {
-      return res.redirect(
-        ['https://', req.get('Host'), req.url].join('')
-      );
-    }
-    next();
-  }
-}
-app.use(forceSSL());
-app.use(express.static(__dirname + '/dist'));
+app.use(requireHTTPS);
 
-app.get('/*', function(req, res) {
-  res.sendFile(path.join(__dirname + '/dist/CarlRewritten/index.html'));
+app.use(express.static("./dist/CarlRewritten/"));
+
+app.get("/*", function(req, res) {
+  res.sendFile("index.html", {root: "/dist/CarlRewritten/"}
+    );
 });
-
-app.listen(process.env.PORT || 12080);
+if(!process.env.PORT) console.log("Local build started")
+app.listen(process.env.PORT || 8080);

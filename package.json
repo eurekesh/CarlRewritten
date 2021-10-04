@@ -8,8 +8,7 @@
     "build": "ng build --prod",
     "local-build": "ng build --prod && node start.js",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test",
-    "postinstall": "ng build"
+    "test": "ng test"
   },
   "private": true,
   "dependencies": {

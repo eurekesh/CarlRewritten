@@ -21,7 +21,9 @@ script:
 - npm run test -- --watch=false --no-progress --browsers=ChromeHeadlessNoSandbox
 deploy:
   provider: heroku
-  skip_cleanup: true
   api_key:
-    secure: $HEROKU_KEY
+    secure: ewpKMci6/+QEkF0SAtQCj9qiRNqHthgxSZanyvFB61hGRwUpm3UpBF+QvZcp6BiThkZuc4EncvPZkHTtNyL1t7z2jcD83m8PiGzyAdwh9ig+Ha8IiB4Myn8VpkXayurJNBM5kX4q6zAblJGzEbWPWIsyX1RhmzoyaUofV4qVffD2KmgwSgXznpxHnZtw80CAmqxn0WVeNUvVzfgmMoftVaJhhka9gAwVLeIhUK+qrbATkcCKVE1eHdMxp+nrqWgUz3niw92ZaXjNwxac9xP2j5vjcQgzgPc5LRcYuL4JSbvoYJpPyMb9k1Op55U0JJ71NpMVGYdKRr2qIJlwvDrGgE0lhhdOOtbJW3YSDk63Foyze+qoTIqjtwuOWi2tAReOiXDFt6+fuRw0NVxbVhH6L/gLtnMZhfobkMsdOolbGdSrezliffbUZ+FsLlVDmhmxRpO1Wtmm5iSl8t6FCyWBkEPBY/N8lsH1YGZG8m0dwYjb8YtAb3DoGxUCF6s6UrN7EZG35AGoh9F63U+8kmgA9MwECIrr+H3m+b6NVvLhLSm8F0fgjRwI5foDHi+qFJQJhdnok/gXaw28MT1krKK9j8xaYZKqszmsl9gI1ByV5swpiX1WzvK6r0madBrzlDaP391yuFO33eHsOrkOpQLfhKhKD7YMJloChqS7FcejTto=
   app: carl-rewritten
+  on:
+    repo: eurekesh/carl-rewritten
+  skip_cleanup: true

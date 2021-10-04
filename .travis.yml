@@ -1,36 +1,27 @@
 dist: xenial
-
 language: node_js
 node_js:
-  - "14"
+- '14'
 sudo: false
-
 branches:
   only:
-    - master
-
+  - master
 addons:
   apt:
     sources:
-      - google-chrome
+    - google-chrome
     packages:
-      - google-chrome-stable
-
-
+    - google-chrome-stable
 cache:
   directories:
-    - node_modules
-
+  - node_modules
 install:
-  - npm install
-
+- npm install
 script:
-  - npm run test -- --watch=false --no-progress --browsers=ChromeHeadlessNoSandbox
-
-
+- npm run test -- --watch=false --no-progress --browsers=ChromeHeadlessNoSandbox
 deploy:
   provider: heroku
   skip_cleanup: true
   api_key:
-    secure: $HEROKU_API_KEY
+    secure: $HEROKU_KEY
   app: carl-rewritten

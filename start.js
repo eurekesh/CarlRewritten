@@ -9,10 +9,10 @@ const express = require('express');
 const app = express();
 app.use(requireHTTPS);
 
-app.use(express.static("./dist/CarlRewritten/"));
+app.use(express.static("./dist/carl-rewritten/"));
 
 app.get("/*", function(req, res) {
-  res.sendFile("index.html", {root: "/dist/CarlRewritten/"}
+  res.sendFile("index.html", {root: "/dist/carl-rewritten/"}
     );
 });
 if(!process.env.PORT) console.log("Local build started")

@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "CarlRewritten": {
+    "carl-rewritten": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -20,7 +20,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/CarlRewritten",
+            "outputPath": "dist/carl-rewritten",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -72,10 +72,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "CarlRewritten:build:production"
+              "browserTarget": "carl-rewritten:build:production"
             },
             "development": {
-              "browserTarget": "CarlRewritten:build:development"
+              "browserTarget": "carl-rewritten:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -83,7 +83,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "CarlRewritten:build"
+            "browserTarget": "carl-rewritten:build"
           }
         },
         "test": {
@@ -107,5 +107,5 @@
       }
     }
   },
-  "defaultProject": "CarlRewritten"
+  "defaultProject": "carl-rewritten"
 }

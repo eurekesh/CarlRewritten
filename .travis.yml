@@ -1,0 +1,19 @@
+language: node_js
+node_js:
+  - "14"
+sudo: false
+
+branches:
+  only:
+    - master
+
+cache:
+  directories:
+    - node_modules
+
+deploy:
+  provider: heroku
+  skip_cleanup: true
+  api_key:
+    secure: $HEROKU_API_KEY
+  app: carl-rewritten
